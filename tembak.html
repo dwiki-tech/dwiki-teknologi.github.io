@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertanyaan Terakhir</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url('32.jpeg'); /* Ganti dengan gambar yang kamu inginkan */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 1.8em;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 26px;
+      margin: 10px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #yes {
+      background-color: #f06292;
+      color: white;
+    }
+
+    #no {
+      background-color: #ccc;
+      color: black;
+      position: absolute;
+    }
+
+    #no:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 480px) {
+      img {
+        width: 160px;
+        height: 160px;
+      }
+
+      h1 {
+        font-size: 1.4em;
+      }
+
+      button {
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="12.jpeg" alt="Foto Cewek Cantik" />
+  <h1>Kamu Mau Gak Jadi Pacar Aku? 💖💖💖</h1>
+  <button id="yes">Mau 💘</button>
+  <button id="no">Nggak 😢</button>
+
+  <script>
+    // Tombol 'Mau' mengarah ke WhatsApp
+    document.getElementById("yes").addEventListener("click", function () {
+      const nomor = "6285758048716"; // Ganti dengan nomor kamu (pakai 62)
+      const pesan = "Aku mau 🥰💖";
+      const link = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+      window.open(link, "_blank");
+    });
+
+    // Tombol 'Nggak' lari-lari
+    const noBtn = document.getElementById("no");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  </script>
+
+</body>
+</html>

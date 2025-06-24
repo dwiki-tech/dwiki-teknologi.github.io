@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ngobrol Dulu Yuk!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      color: #3a3a3a;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      transition: all 0.6s ease;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      transition: all 0.6s ease;
+    }
+
+    button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      background-color: #f06292;
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(240, 98, 146, 0.3);
+    }
+
+    button:hover {
+      background-color: #ec407a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Hai Tasya, ada yang mau aku omongin 😳💗</h1>
+    <p id="text">Tapi pelan-pelan aja ya... klik tombolnya dulu ya 😊🌸</p>
+    <button onclick="nextStep()">Lanjut</button>
+  </div>
+
+  <script>
+    const steps = [
+      "Hai Tasya, ada yang mau aku omongin 😳💗|Tapi pelan-pelan aja ya... klik tombolnya dulu ya 😊🌸",
+      "Mau lihat sesuatu yang spesial? 😊🌸|"
+    ];
+
+    let step = 0;
+
+    function nextStep() {
+      step++;
+      if (step < steps.length) {
+        const [title, text] = steps[step].split("|");
+        document.getElementById("title").innerText = title;
+        document.getElementById("text").innerText = text;
+      } else {
+        window.location.href = "puisi.html"; // Pindah ke halaman puisi
+      }
+    }
+  </script>
+</body>
+</html>

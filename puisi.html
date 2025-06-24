@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Puisi & Musik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #ffe4ec, #ffdde1);
+      font-family: 'Segoe UI', sans-serif;
+      color: #4a148c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background-image: url('21.jpg'); /* Ganti dengan gambar kamu */
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 20px 30px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h1 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .poem {
+      font-style: italic;
+      font-size: 1em;
+      line-height: 1;
+      white-space: pre-line;
+      margin-bottom: 20px;
+      color: #e1baff;
+    }
+
+    .spotify-player {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      padding: 15px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .spotify-player img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .track-info {
+      flex: 1 1 120px;
+      text-align: left;
+    }
+
+    .track-info h2 {
+      font-size: 1.1em;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+
+    .track-info p {
+      font-size: 0.85em;
+      color: #ccc;
+    }
+
+    .play-button {
+      background-color: #1db954;
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .play-button:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .play-button::before {
+      content: '▶';
+      color: white;
+      font-size: 20px;
+      margin-left: 2px;
+    }
+
+    audio {
+      display: none;
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      background: linear-gradient(45deg, #ec407a, #d81b60);
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Responsif */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .card {
+        padding: 16px 18px;
+      }
+
+      .card h1 {
+        font-size: 1.5em;
+      }
+
+      .poem {
+        font-size: 0.95em;
+      }
+
+      .spotify-player {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .track-info {
+        text-align: center;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Puisi Untukmu 💌</h1>
+    <div class="poem">
+Tasya, namamu indah dalam setiap doa,<br>
+Hadirmu bagai cahaya yang menerangi jiwa.<br>
+Bukan sekadar kagum yang singgah,<br>
+Tapi rasa yang tumbuh tak pernah lelah.<br><br>
+Tatapanmu tenang, senyummu damai,<br>
+Membuat hati ini tak ingin berpaling, walau sekali.<br>
+Tasya, bolehkah aku menjaga rasa ini?<br>
+Untuk bersamamu, hari ini hingga nanti... 💞
+    </div>
+
+    <!-- Pemutar Musik -->
+    <div class="spotify-player">
+      <img src="21.jpg" alt="Perfect Song">
+      <div class="track-info">
+        <h2>Perfect</h2>
+        <p>1.623.821 pendengar</p>
+      </div>
+      <button class="play-button" onclick="document.getElementById('audio').play()"></button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="audio" src="perfect (sped up)-a2f637355af75bccb177ed7ffe69ed7a.mp3"></audio>
+
+    <button class="btn" onclick="window.location.href='tembak.html'">
+      Lanjut ke Pertanyaan 💖
+    </button>
+  </div>
+
+</body>
+</html>
